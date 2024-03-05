@@ -4,7 +4,7 @@ import 'package:monthy_tracker/Styles.dart';
 
 Widget HeadingTitleBar(BuildContext context, String title){
   return Container(
-    margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
+    margin: EdgeInsets.fromLTRB(20, 10, 20, 10),
     padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(12),

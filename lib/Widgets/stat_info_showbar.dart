@@ -11,7 +11,7 @@ Widget StatInfoShowBar(BuildContext context, String text){
         borderRadius: BorderRadius.circular(8),
         color: color3.withOpacity(0.5)
     ),
-    alignment: AlignmentDirectional.center,
+    alignment: AlignmentDirectional.centerStart,
     child: Text(
       text,
       style: TextStyle(
