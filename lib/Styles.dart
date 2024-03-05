@@ -8,14 +8,29 @@ double get_scale_factor(BuildContext context){
 
 Color color1 = Color(0xFF265073);
 Color color2 = Color(0xFF59B4C3);
-Color color3 = Color(0xFF74E291);
-Color color4 = Color(0xFFEFF396);
-Color colorWhite = Color(0xFFF1FADA);
+Color color3 = Color(0xFF33EA00);
+Color color4 = Color(0xFFADE6FA);
+Color colorWhite = Color(0xFFF6FFE4);
 
 TextStyle nameTitleStyle (BuildContext context) {
   return TextStyle(
     color: colorWhite,
     fontSize: 24*get_scale_factor(context),
+    fontWeight: FontWeight.bold
+  );
+}
+
+TextStyle hintTextStyle (BuildContext context, Color color) {
+  return TextStyle(
+    color: color.withOpacity(0.5),
+    fontSize: 14*get_scale_factor(context),
+  );
+}
+
+TextStyle boldTextStyle (BuildContext context, Color color) {
+  return TextStyle(
+    color: color,
+    fontSize: 16*get_scale_factor(context),
     fontWeight: FontWeight.bold
   );
 }
