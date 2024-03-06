@@ -1,35 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:monthy_tracker/Pages/home_page.dart';
-import 'package:monthy_tracker/Pages/sign_in_page.dart';
-import 'package:monthy_tracker/Styles.dart';
 import 'package:monthy_tracker/Widgets/action_button.dart';
 import 'package:monthy_tracker/Widgets/ancor_text.dart';
 import 'package:monthy_tracker/Widgets/heading_title_bar.dart';
 import 'package:monthy_tracker/Widgets/input_text_widget.dart';
 
-class SignUpPage extends StatefulWidget {
-  const SignUpPage({super.key});
+import '../Styles.dart';
+
+class SignInPage extends StatefulWidget {
+  const SignInPage({super.key});
 
   @override
-  State<SignUpPage> createState() => _SignUpPageState();
+  State<SignInPage> createState() => _SignInPageState();
 }
 
-class _SignUpPageState extends State<SignUpPage> {
-
-  TextEditingController name = new TextEditingController();
+class _SignInPageState extends State<SignInPage> {
   TextEditingController email = new TextEditingController();
   TextEditingController pass = new TextEditingController();
 
-  void do_sign_up(){
-    print("Sign up pressed");
+  void do_sign_in(){
+    print("Sign in pressed");
     Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
   }
 
-  void go_to_signin_page(){
-    print("Sign in page triggered");
-    Navigator.push(context, MaterialPageRoute(builder: (context)=>SignInPage()));
-
+  void go_to_signup_page(){
+    print("Sign up page triggered");
   }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -41,13 +38,12 @@ class _SignUpPageState extends State<SignUpPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              PageTitleBar(context, color1, "Sign Up"),
+              PageTitleBar(context, color1, "Sign In"),
               SizedBox(height: 30,),
-              InputTextWidget(context, Colors.white, "Name", "Enter your name", name, false),
-              InputTextWidget(context, Colors.white, "Email", "Enter your email (Email should be unique)", email, false),
+              InputTextWidget(context, Colors.white, "Email", "Enter your registered email", email, false),
               InputTextWidget(context, Colors.white, "Password", "Enter password", pass, true),
-              ActionButton(context, color3, "Sign Up", do_sign_up),
-              AncorText(context,Colors.transparent,color1,"Already have an account? Sign in", go_to_signin_page),
+              ActionButton(context, color3, "Sign In", do_sign_in),
+              AncorText(context,Colors.transparent,color1,"Don't have an account? Sign up", go_to_signup_page),
             ],
           ),
         ),

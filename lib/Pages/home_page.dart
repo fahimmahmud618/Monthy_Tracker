@@ -43,12 +43,12 @@ class _HomePageState extends State<HomePage> {
               HeadingTitleBar(context, "Tuition Stat"),
               for(String data in statData)
                 StatInfoShowBar(context, data),
-              ActionButton(context, "See Details", go_to_tuition_page),
+              ActionButton(context, color3,"See Details", go_to_tuition_page),
               SizedBox(height: 20,),
               HeadingTitleBar(context, "Cost Stat"),
               for(String data in statData)
                 StatInfoShowBar(context, data),
-              ActionButton(context, "See Details", go_to_cost_page),
+              ActionButton(context, color3, "See Details", go_to_cost_page),
             ],
           )
         ),
