@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:monthy_tracker/Pages/add_new_tuition.dart';
 import 'package:monthy_tracker/Styles.dart';
 import 'package:monthy_tracker/Widgets/action_button.dart';
 import 'package:monthy_tracker/Widgets/appbar.dart';
@@ -26,6 +27,11 @@ class _HomePageState extends State<HomePage> {
     print("tuition page triggered");
   }
 
+  void go_to_add_new_tuition_page(){
+    print("add nuw tuition page triggered");
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>AddNewTuitionPage()));
+  }
+
   void go_to_cost_page(){
     // TODO
     print("cost page triggered");
@@ -43,7 +49,12 @@ class _HomePageState extends State<HomePage> {
               HeadingTitleBar(context, "Tuition Stat"),
               for(String data in statData)
                 StatInfoShowBar(context, data),
-              ActionButton(context, color3,"See Details", go_to_tuition_page),
+              Row(
+                children: [
+                  ActionButton(context, color3,"See Details", go_to_tuition_page),
+                  ActionButton(context, color3,"Add new Tuition", go_to_add_new_tuition_page),
+                ],
+              ),
               SizedBox(height: 20,),
               HeadingTitleBar(context, "Cost Stat"),
               for(String data in statData)
