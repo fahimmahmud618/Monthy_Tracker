@@ -40,8 +40,8 @@ class _SignInPageState extends State<SignInPage> {
             children: [
               PageTitleBar(context, color1, "Sign In"),
               SizedBox(height: 30,),
-              InputTextWidget(context, Colors.white, "Email", "Enter your registered email", email, false),
-              InputTextWidget(context, Colors.white, "Password", "Enter password", pass, true),
+              InputTextWidget(context, Colors.white, Colors.black, "Email", "Enter your registered email", email, false),
+              InputTextWidget(context, Colors.white, Colors.black, "Password", "Enter password", pass, true),
               ActionButton(context, color3, "Sign In", do_sign_in),
               AncorText(context,Colors.transparent,color1,"Don't have an account? Sign up", go_to_signup_page),
             ],

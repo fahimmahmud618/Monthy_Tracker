@@ -2,18 +2,18 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:monthy_tracker/Styles.dart';
 
-Widget InputTextWidget(BuildContext context,Color color, String title, String placeholder, TextEditingController textEditingController, bool ishide){
+Widget InputTextWidget(BuildContext context,Color borderColor, Color textColor, String title, String placeholder, TextEditingController textEditingController, bool ishide){
   return Container(
     margin: EdgeInsets.fromLTRB(20, 5, 20, 5),
     padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
     decoration: BoxDecoration(
-      color: color,
+      color: borderColor,
       borderRadius: BorderRadius.circular(8)
     ),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(title, style: boldTextStyle(context, Colors.black),),
+        Text(title, style: boldTextStyle(context, textColor),),
         Container(
           padding: EdgeInsets.symmetric(horizontal: 5),
           margin: EdgeInsets.symmetric(vertical: 2),
@@ -30,7 +30,7 @@ Widget InputTextWidget(BuildContext context,Color color, String title, String pl
             decoration: InputDecoration(
               border: InputBorder.none,
                 hintText: placeholder,
-              hintStyle: hintTextStyle(context, Colors.black)
+              hintStyle: hintTextStyle(context, textColor)
             ),
           ),
         )

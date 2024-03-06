@@ -43,9 +43,9 @@ class _SignUpPageState extends State<SignUpPage> {
             children: [
               PageTitleBar(context, color1, "Sign Up"),
               SizedBox(height: 30,),
-              InputTextWidget(context, Colors.white, "Name", "Enter your name", name, false),
-              InputTextWidget(context, Colors.white, "Email", "Enter your email (Email should be unique)", email, false),
-              InputTextWidget(context, Colors.white, "Password", "Enter password", pass, true),
+              InputTextWidget(context, Colors.white, Colors.black, "Name", "Enter your name", name, false),
+              InputTextWidget(context, Colors.white, Colors.black, "Email", "Enter your email (Email should be unique)", email, false),
+              InputTextWidget(context, Colors.white, Colors.black, "Password", "Enter password", pass, true),
               ActionButton(context, color3, "Sign Up", do_sign_up),
               AncorText(context,Colors.transparent,color1,"Already have an account? Sign in", go_to_signin_page),
             ],
