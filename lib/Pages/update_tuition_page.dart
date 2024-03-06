@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:monthy_tracker/Widgets/action_button.dart';
 import 'package:monthy_tracker/Widgets/dropdown.dart';
 import 'package:monthy_tracker/Widgets/heading_title_bar.dart';
+import 'package:monthy_tracker/Widgets/icon_with_action.dart';
 
 import '../Styles.dart';
 
@@ -14,15 +15,21 @@ class UpdateTuitionPage extends StatefulWidget {
 
 class _UpdateTuitionPageState extends State<UpdateTuitionPage> {
 
-  List<String> tuitionList=["Boni amin", "Roufa", "shafa"];
-  String selectedOption="Boni amin";
+  List<String> tuitionList=["Select tuition","Boni amin", "Roufa", "shafa"];
+  String selectedOption="Select";
+  int count=9;
   void update_tuition(){
     print("tuition update triggered");
+    print("Selected option: $selectedOption, count: $count");
   }
 
-  void update_selection(){
-    print("tuition update triggered");
+  void update_selection(String newValue) {
+    setState(() {
+      selectedOption = newValue;
+    });
+    print("Selected option: $selectedOption, count: $count");
   }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -36,23 +43,21 @@ class _UpdateTuitionPageState extends State<UpdateTuitionPage> {
             children: [
               PageTitleBar(context, color1, "Update Tuition"),
               SizedBox(height: 30,),
-              // DropdownSelector(context, Colors.white, Colors.black, tuitionList, selectedOption,
-              //       (String newValue) {
-              //     // Update the selected option in the parent widget
-              //     selectedOption = newValue;
-              //     // You can also perform any other actions based on the selected option
-              //     print("Selected option: $selectedOption");
-              //   },
-              // ),
-              DropdownSelector(
-                tuitionList: tuitionList,
-                selectedOption: selectedOption,
-                onChanged: (String newValue) {
-                  selectedOption = newValue;
-                  print("Selected option: $selectedOption");
-                },
+              Column(
+                children: [
+                  DropdownSelector(context, Colors.white, Colors.black, tuitionList, selectedOption,update_selection),
+                  SizedBox(height: 30,),
+                  Text("For: $selectedOption", style: boldTextStyle(context, Colors.black),),
+                  SizedBox(height: 20,),
+                  Row(
+                    children: [
+                      IconWithAction(Icons.plus_one, color3, '', ()=>count++),
+                      IconWithAction(Icons.exposure_minus_1, color3, '', ()=>count--),
+                    ],
+                  ),
+                ],
               ),
-              ActionButton(context, color3, "Sign Up", update_tuition),
+              ActionButton(context, color3, "Save Changes", update_tuition),
             ],
           ),
         ),
