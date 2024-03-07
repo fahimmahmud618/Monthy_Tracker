@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:monthy_tracker/Models/tuition.dart';
 import 'package:monthy_tracker/Widgets/action_button.dart';
 import 'package:monthy_tracker/Widgets/dropdown.dart';
 import 'package:monthy_tracker/Widgets/heading_title_bar.dart';
 import 'package:monthy_tracker/Widgets/icon_with_action.dart';
+import 'package:monthy_tracker/Widgets/update_tuition_widget.dart';
 
 import '../Styles.dart';
 
@@ -14,20 +16,41 @@ class UpdateTuitionPage extends StatefulWidget {
 }
 
 class _UpdateTuitionPageState extends State<UpdateTuitionPage> {
+  List<Tuition> tuitions = [
+    new Tuition("Boni amin", 12, 5),
+    new Tuition("Roufa", 12, 4),
+    new Tuition("Shafa", 12, 6),
+  ];
+  List<String> tuitionList=[];
 
-  List<String> tuitionList=["Select tuition","Boni amin", "Roufa", "shafa"];
-  String selectedOption="Select";
+  String selectedOption="Select tuition";
   int count=9;
-  void update_tuition(){
-    print("tuition update triggered");
-    print("Selected option: $selectedOption, count: $count");
+
+  // void create_tuition_dropdown_list(){
+  //   for(Tuition t in tuitions){
+  //     tuitionList.add(t.studentName);
+  //   }
+  // }
+  void update_tuition_in_db(){
+    print("tuition update db triggered");
   }
 
-  void update_selection(String newValue) {
-    setState(() {
-      selectedOption = newValue;
-    });
-    print("Selected option: $selectedOption, count: $count");
+  void update_selection(String stuname, int cnt) {
+    print("$stuname ,$cnt");
+    for(Tuition t in tuitions){
+      if(t.studentName==stuname) {
+        t.countInThisMonth = cnt;
+        print(t.studentName);
+        print(t.countInThisMonth);
+      }
+    }
+    // print("Selected option: $selectedOption, count: $count");
+  }
+
+  @override
+  void initState() {
+    // create_tuition_dropdown_list();
+    super.initState();
   }
 
   @override
@@ -43,21 +66,28 @@ class _UpdateTuitionPageState extends State<UpdateTuitionPage> {
             children: [
               PageTitleBar(context, color1, "Update Tuition"),
               SizedBox(height: 30,),
+              // Column(
+              //   children: [
+              //     DropdownSelector(context, Colors.white, Colors.black, tuitions.map((tuition) => tuition.studentName).toList(), selectedOption,update_selection),
+              //     SizedBox(height: 30,),
+              //     selectedOption!="Select tuition"? Text("For: $selectedOption , Count: $count", style: boldTextStyle(context, Colors.black),): Text(""),
+              //     selectedOption!="Select tuition"? SizedBox(height: 20,): Text(""),
+              //     selectedOption!="Select tuition"? Row(
+              //       children: [
+              //         IconWithAction(Icons.plus_one, color3, '', ()=>count++),
+              //         IconWithAction(Icons.exposure_minus_1, color3, '', ()=>count--),
+              //       ],
+              //     ): Text(""),
+              //   ],
+              // ),
               Column(
                 children: [
-                  DropdownSelector(context, Colors.white, Colors.black, tuitionList, selectedOption,update_selection),
-                  SizedBox(height: 30,),
-                  Text("For: $selectedOption", style: boldTextStyle(context, Colors.black),),
-                  SizedBox(height: 20,),
-                  Row(
-                    children: [
-                      IconWithAction(Icons.plus_one, color3, '', ()=>count++),
-                      IconWithAction(Icons.exposure_minus_1, color3, '', ()=>count--),
-                    ],
-                  ),
+                  for(Tuition t in tuitions)
+                    UpdateTuitionCount(studentName: t.studentName, initialCount: t.countInThisMonth, onChanged: update_selection),
                 ],
               ),
-              ActionButton(context, color3, "Save Changes", update_tuition),
+              SizedBox(height: 30,),
+              ActionButton(context, color3, "Save Changes", update_tuition_in_db),
             ],
           ),
         ),

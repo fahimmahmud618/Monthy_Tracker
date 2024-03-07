@@ -59,9 +59,10 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   ActionButton(context, color3,"See Details", go_to_tuition_page),
                   ActionButton(context, color3,"Add new Tuition", go_to_add_new_tuition_page),
-                  ActionButton(context, color3,"Update Tuition", go_to_update_tuition_page),
                 ],
               ),
+              ActionButton(context, color3,"Update Tuition", go_to_update_tuition_page),
+
               SizedBox(height: 20,),
               HeadingTitleBar(context, "Cost Stat"),
               for(String data in statData)
