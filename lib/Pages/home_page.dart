@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:monthy_tracker/Pages/add_new_expence_page.dart';
 import 'package:monthy_tracker/Pages/add_new_tuition.dart';
+import 'package:monthy_tracker/Pages/show_cost_details_page.dart';
 import 'package:monthy_tracker/Pages/update_tuition_page.dart';
 import 'package:monthy_tracker/Styles.dart';
 import 'package:monthy_tracker/Widgets/action_button.dart';
@@ -40,7 +41,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   void go_to_cost_page(){
-    // TODO
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>ShowCostDetailsPage()));
     print("cost page triggered");
   }
   void go_to_add_cost_page(){

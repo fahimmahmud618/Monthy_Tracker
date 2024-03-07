@@ -44,7 +44,8 @@ class _AddNewExpensePageState extends State<AddNewExpensePage> {
       child: Scaffold(
         body: Container(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               PageTitleBar(context, color1, "Update Expense"),
               SizedBox(height: 30,),
