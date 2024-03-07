@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:monthy_tracker/Models/tuition.dart';
 import 'package:monthy_tracker/Widgets/action_button.dart';
 import 'package:monthy_tracker/Widgets/dropdown.dart';
-import 'package:monthy_tracker/Widgets/heading_title_bar.dart';
+import 'package:monthy_tracker/Widgets/page_title_bar.dart';
 import 'package:monthy_tracker/Widgets/icon_with_action.dart';
 import 'package:monthy_tracker/Widgets/update_tuition_widget.dart';
 

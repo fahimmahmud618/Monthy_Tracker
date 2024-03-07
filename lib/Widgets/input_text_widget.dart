@@ -38,3 +38,45 @@ Widget InputTextWidget(BuildContext context,Color borderColor, Color textColor, 
     ),
   );
 }
+
+
+Widget InputTextActionWidget(BuildContext context,Color borderColor, Color textColor, String title, String placeholder, TextEditingController textEditingController, bool ishide, void Function(String) onChanged){
+  return InkWell(
+    // onTap: action,
+    child: Container(
+      margin: EdgeInsets.fromLTRB(20, 5, 20, 5),
+      padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+      decoration: BoxDecoration(
+        color: borderColor,
+        borderRadius: BorderRadius.circular(8)
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(title, style: boldTextStyle(context, textColor),),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 5),
+            margin: EdgeInsets.symmetric(vertical: 2),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(8),
+              border: Border.all(
+                color: Colors.black,
+                width: 1,
+              )
+            ),
+            child: TextField(
+              onChanged: onChanged,
+              obscureText: ishide,
+              controller: textEditingController,
+              decoration: InputDecoration(
+                border: InputBorder.none,
+                  hintText: placeholder,
+                hintStyle: hintTextStyle(context, textColor)
+              ),
+            ),
+          )
+        ],
+      ),
+    ),
+  );
+}

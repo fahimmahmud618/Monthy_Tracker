@@ -4,7 +4,7 @@ import 'package:monthy_tracker/Pages/sign_in_page.dart';
 import 'package:monthy_tracker/Styles.dart';
 import 'package:monthy_tracker/Widgets/action_button.dart';
 import 'package:monthy_tracker/Widgets/ancor_text.dart';
-import 'package:monthy_tracker/Widgets/heading_title_bar.dart';
+import 'package:monthy_tracker/Widgets/page_title_bar.dart';
 import 'package:monthy_tracker/Widgets/input_text_widget.dart';
 
 class SignUpPage extends StatefulWidget {
