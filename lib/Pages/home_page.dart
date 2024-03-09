@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:monthy_tracker/Pages/add_new_expence_page.dart';
 import 'package:monthy_tracker/Pages/add_new_tuition.dart';
+import 'package:monthy_tracker/Pages/remove_tuition_page.dart';
 import 'package:monthy_tracker/Pages/show_cost_details_page.dart';
-import 'package:monthy_tracker/Pages/show_tuition_details.dart';
+import 'package:monthy_tracker/Pages/show_tuition_details_page.dart';
 import 'package:monthy_tracker/Pages/update_tuition_page.dart';
 import 'package:monthy_tracker/Styles.dart';
 import 'package:monthy_tracker/Widgets/action_button.dart';
@@ -28,7 +29,12 @@ class _HomePageState extends State<HomePage> {
 
   void go_to_tuition_page(){
     Navigator.push(context, MaterialPageRoute(builder: (context)=>ShowTuitionDetailsPage()));
-    print("tuition page triggered");
+    print("show tuition page triggered");
+  }
+
+  void go_to_remove_tuition_page(){
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>RemoveTuitionPage()));
+    print("remove tuition page triggered");
   }
 
   void go_to_add_new_tuition_page(){
@@ -69,7 +75,12 @@ class _HomePageState extends State<HomePage> {
                   ActionButton(context, color3,"Add new Tuition", go_to_add_new_tuition_page),
                 ],
               ),
-              ActionButton(context, color3,"Update Tuition", go_to_update_tuition_page),
+              Row(
+                children: [
+                  ActionButton(context, color3,"Update Tuition", go_to_update_tuition_page),
+                  ActionButton(context, color3,"Remove Tuition", go_to_remove_tuition_page),
+                ],
+              ),
 
               SizedBox(height: 20,),
               HeadingTitleBar(context, "Cost Stat"),

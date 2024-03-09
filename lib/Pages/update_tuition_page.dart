@@ -17,9 +17,9 @@ class UpdateTuitionPage extends StatefulWidget {
 
 class _UpdateTuitionPageState extends State<UpdateTuitionPage> {
   List<Tuition> tuitions = [
-    new Tuition("Boni amin", 12, 5),
-    new Tuition("Roufa", 12, 4),
-    new Tuition("Shafa", 12, 6),
+    new Tuition("Boni amin", 12, 5,true),
+    new Tuition("Roufa", 12, 4,true),
+    new Tuition("Shafa", 12, 6,true),
   ];
   List<String> tuitionList=[];
 
