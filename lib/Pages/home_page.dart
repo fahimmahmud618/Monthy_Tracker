@@ -8,6 +8,7 @@ import 'package:monthy_tracker/Pages/update_tuition_page.dart';
 import 'package:monthy_tracker/Styles.dart';
 import 'package:monthy_tracker/Widgets/action_button.dart';
 import 'package:monthy_tracker/Widgets/appbar.dart';
+import 'package:monthy_tracker/Widgets/page_image.dart';
 import 'package:monthy_tracker/Widgets/page_title_bar.dart';
 import 'package:monthy_tracker/Widgets/stat_info_showbar.dart';
 
@@ -24,7 +25,12 @@ class _HomePageState extends State<HomePage> {
     "Boni Amin: 18", "Athay 12",
     "Boni Amin: 18", "Athay 12",
     "Boni Amin: 18", "Athay 12",
-    "Boni Amin: 18", "Athay 12",
+  ];
+
+  List<String> costData = [
+    "Food: 1348", "Other: 1200",
+    "Total: 2548",
+
   ];
 
   void go_to_tuition_page(){
@@ -62,29 +68,15 @@ class _HomePageState extends State<HomePage> {
       appBar: appBar(context),
       body: SingleChildScrollView(
         child: Container(
-          color: colorWhite,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              HeadingTitleBar(context, "Tuition Stat"),
-              for(String data in statData)
-                StatInfoShowBar(context, data),
-              Row(
-                children: [
-                  ActionButton(context, color3,"See Details", go_to_tuition_page),
-                  ActionButton(context, color3,"Add new Tuition", go_to_add_new_tuition_page),
-                ],
-              ),
-              Row(
-                children: [
-                  ActionButton(context, color3,"Update Tuition", go_to_update_tuition_page),
-                  ActionButton(context, color3,"Remove Tuition", go_to_remove_tuition_page),
-                ],
-              ),
-
-              SizedBox(height: 20,),
-              HeadingTitleBar(context, "Cost Stat"),
-              for(String data in statData)
+              // SizedBox(height: 20,),
+              // Image.asset('expensestat.png'),
+              PageImageWithSeizedBox(context, 'expensestat.png', 20),
+              PageTitleBar(context, color1, "Cost Stat"),
+              for(String data in costData)
                 StatInfoShowBar(context, data),
               Row(
                 children: [
@@ -92,6 +84,27 @@ class _HomePageState extends State<HomePage> {
                   ActionButton(context, color3, "Update Cost", go_to_add_cost_page),
                 ],
               ),
+              PageImageWithSeizedBox(context, 'tuitionstat.png', 40),
+              PageTitleBar(context, color1, "Tuition Stat"),
+              for(String data in statData)
+                StatInfoShowBar(context, data),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ActionButton(context, color3,"See Details", go_to_tuition_page),
+                  ActionButton(context, color3,"Add new Tuition", go_to_add_new_tuition_page),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ActionButton(context, color3,"Update Tuition", go_to_update_tuition_page),
+                  ActionButton(context, color3,"Remove Tuition", go_to_remove_tuition_page),
+                ],
+              ),
+
+
+
             ],
           )
         ),

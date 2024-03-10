@@ -3,6 +3,7 @@ import 'package:monthy_tracker/Styles.dart';
 import 'package:monthy_tracker/Widgets/action_button.dart';
 import 'package:monthy_tracker/Widgets/appbar.dart';
 import 'package:monthy_tracker/Widgets/dropdown.dart';
+import 'package:monthy_tracker/Widgets/page_icon.dart';
 import 'package:monthy_tracker/Widgets/page_title_bar.dart';
 
 class RemoveTuitionPage extends StatefulWidget {
@@ -36,6 +37,7 @@ class _RemoveTuitionPageState extends State<RemoveTuitionPage> {
           alignment: Alignment.centerRight,
           child: Column(
             children: [
+              PageIcon(context,Icons.group_remove),
               PageTitleBar(context, color1, "Remove Tuition"),
               DropdownSelector(context, color4, Colors.black, stuNames, stuNames[0], select_selected_option),
               Container(

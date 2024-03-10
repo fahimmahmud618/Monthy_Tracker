@@ -3,6 +3,7 @@ import 'package:monthy_tracker/Models/tuition.dart';
 import 'package:monthy_tracker/Widgets/action_button.dart';
 import 'package:monthy_tracker/Widgets/appbar.dart';
 import 'package:monthy_tracker/Widgets/dropdown.dart';
+import 'package:monthy_tracker/Widgets/page_icon.dart';
 import 'package:monthy_tracker/Widgets/page_title_bar.dart';
 import 'package:monthy_tracker/Widgets/icon_with_action.dart';
 import 'package:monthy_tracker/Widgets/update_tuition_widget.dart';
@@ -66,6 +67,7 @@ class _UpdateTuitionPageState extends State<UpdateTuitionPage> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              PageIcon(context, Icons.update_rounded),
               PageTitleBar(context, color1, "Update Tuition"),
               SizedBox(height: 30,),
               // Column(

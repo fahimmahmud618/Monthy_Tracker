@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:monthy_tracker/Styles.dart';
 import 'package:monthy_tracker/Widgets/appbar.dart';
 import 'package:monthy_tracker/Widgets/my_row.dart';
+import 'package:monthy_tracker/Widgets/page_icon.dart';
 import 'package:monthy_tracker/Widgets/page_title_bar.dart';
 
 class ShowTuitionDetailsPage extends StatefulWidget {
@@ -36,12 +37,13 @@ class _ShowTuitionDetailsPageState extends State<ShowTuitionDetailsPage> {
       body: Container(
         child: Column(
           children: [
+            PageIcon(context, Icons.list_alt_rounded),
             PageTitleBar(context, color1, "Tuition Details"),
-            MyRowTuition(context, color4, Colors.black, boldTextStyle(context, Colors.black), stuNames),
+            MyRowTuition(context, color3.withOpacity(0.2), Colors.black, boldTextStyle(context, Colors.black), stuNames),
             for(List<String> c in count)
               Container(
                 child: isOddDate(c[0])? MyRowTuition(context, Colors.white, Colors.black, normalTextStyle(context, Colors.black), c):
-                MyRowTuition(context, color4, Colors.black,normalTextStyle(context, Colors.black), c),
+                MyRowTuition(context, color3.withOpacity(0.2), Colors.black,normalTextStyle(context, Colors.black), c),
               ),
           ],
         ),
