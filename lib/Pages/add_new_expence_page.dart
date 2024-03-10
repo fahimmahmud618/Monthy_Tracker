@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:monthy_tracker/Styles.dart';
 import 'package:monthy_tracker/Widgets/action_button.dart';
+import 'package:monthy_tracker/Widgets/appbar.dart';
 import 'package:monthy_tracker/Widgets/input_text_widget.dart';
 import 'package:monthy_tracker/Widgets/page_title_bar.dart';
 
@@ -42,9 +43,10 @@ class _AddNewExpensePageState extends State<AddNewExpensePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: appBar(context),
         body: Container(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               PageTitleBar(context, color1, "Update Expense"),

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:monthy_tracker/Pages/home_page.dart';
+import 'package:monthy_tracker/Pages/sign_up_page.dart';
 import 'package:monthy_tracker/Widgets/action_button.dart';
 import 'package:monthy_tracker/Widgets/ancor_text.dart';
+import 'package:monthy_tracker/Widgets/page_icon.dart';
 import 'package:monthy_tracker/Widgets/page_title_bar.dart';
 import 'package:monthy_tracker/Widgets/input_text_widget.dart';
 
@@ -25,6 +27,8 @@ class _SignInPageState extends State<SignInPage> {
 
   void go_to_signup_page(){
     print("Sign up page triggered");
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpPage()));
+
   }
 
   @override
@@ -35,10 +39,12 @@ class _SignInPageState extends State<SignInPage> {
           color: Colors.white,
           alignment: Alignment.centerRight,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              PageIcon(context, Icons.login),
               PageTitleBar(context, color1, "Sign In"),
+
               SizedBox(height: 30,),
               InputTextWidget(context, Colors.white, Colors.black, "Email", "Enter your registered email", email, false),
               InputTextWidget(context, Colors.white, Colors.black, "Password", "Enter password", pass, true),

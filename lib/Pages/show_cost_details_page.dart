@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:monthy_tracker/Widgets/appbar.dart';
 import 'package:monthy_tracker/Widgets/my_row.dart';
 import 'package:monthy_tracker/Widgets/page_title_bar.dart';
 
@@ -39,15 +40,16 @@ class _ShowCostDetailsPageState extends State<ShowCostDetailsPage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
+      appBar: appBar(context),
       body: Container(
         child: Column(
           children: [
             PageTitleBar(context, color1, "Cost Details"),
-            MyRowCost(context, color4, Colors.black, "Date", "weekday", "food", "other", "total"),
+            MyRowCost(context, color4, Colors.black, boldTextStyle(context, Colors.black), "Date", "", "food", "other", "total"),
             for(CostTable c in ct)
               Container(
-                  child: isOddDate(c.date)? MyRowCost(context, Colors.white, Colors.black, c.date, c.weekday, c.food, c.other, c.total):
-                  MyRowCost(context, color4, Colors.black, c.date, c.weekday, c.food, c.other, c.total),
+                  child: isOddDate(c.date)? MyRowCost(context, Colors.white, Colors.black, normalTextStyle(context, Colors.black), c.date, c.weekday, c.food, c.other, c.total):
+                  MyRowCost(context, color4, Colors.black,normalTextStyle(context, Colors.black), c.date, c.weekday, c.food, c.other, c.total),
               ),
           ],
         ),

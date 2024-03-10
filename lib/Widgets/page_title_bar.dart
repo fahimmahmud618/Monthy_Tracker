@@ -39,7 +39,8 @@ Widget PageTitleBar(BuildContext context, Color color, String title){
       title,
       style: TextStyle(
         color: color,
-        fontSize: 24*get_scale_factor(context),
+        // fontSize: ,
+        fontSize: 20*get_scale_factor(context),
         fontWeight: FontWeight.bold
       ),
     ),

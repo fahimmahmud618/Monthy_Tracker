@@ -4,6 +4,7 @@ import 'package:monthy_tracker/Pages/sign_in_page.dart';
 import 'package:monthy_tracker/Styles.dart';
 import 'package:monthy_tracker/Widgets/action_button.dart';
 import 'package:monthy_tracker/Widgets/ancor_text.dart';
+import 'package:monthy_tracker/Widgets/page_icon.dart';
 import 'package:monthy_tracker/Widgets/page_title_bar.dart';
 import 'package:monthy_tracker/Widgets/input_text_widget.dart';
 
@@ -38,9 +39,10 @@ class _SignUpPageState extends State<SignUpPage> {
           color: Colors.white,
           alignment: Alignment.centerRight,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              PageIcon(context, Icons.app_registration),
               PageTitleBar(context, color1, "Sign Up"),
               SizedBox(height: 30,),
               InputTextWidget(context, Colors.white, Colors.black, "Name", "Enter your name", name, false),

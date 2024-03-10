@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:monthy_tracker/Models/tuition.dart';
 
-Widget MyRowCost(BuildContext context, Color bgColor, Color color, String date, String weekday, String food, String other, String total){
+Widget MyRowCost(BuildContext context, Color bgColor, Color color, TextStyle textStyle, String date, String weekday, String food, String other, String total){
   return Container(
     padding: EdgeInsets.symmetric(vertical: 2),
     margin: EdgeInsets.symmetric(horizontal: 20),
@@ -9,18 +9,18 @@ Widget MyRowCost(BuildContext context, Color bgColor, Color color, String date, 
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        Text(date),
-        Text(weekday),
-        Text(food),
-        Text(other),
-        Text(total),
+        Text(date ,style: textStyle,),
+        Text(weekday,style: textStyle,),
+        Text(food,style: textStyle,),
+        Text(other,style: textStyle,),
+        Text(total,style: textStyle,),
       ],
     ),
   );
 }
 
 
-Widget MyRowTuition(BuildContext context, Color bgColor, Color color, List<String> tuitions){
+Widget MyRowTuition(BuildContext context, Color bgColor, Color color, TextStyle tstyle, List<String> tuitions){
   return Container(
     padding: EdgeInsets.symmetric(vertical: 2),
     margin: EdgeInsets.symmetric(horizontal: 20),
@@ -33,7 +33,7 @@ Widget MyRowTuition(BuildContext context, Color bgColor, Color color, List<Strin
           Container(
             width: 60,
             alignment: Alignment.center, // Add this line to center the text vertically
-            child: Text(t),
+            child: Text(t,style: tstyle,),
           ),
       ],
     ),

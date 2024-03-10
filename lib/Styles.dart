@@ -38,3 +38,11 @@ TextStyle boldTextStyle (BuildContext context, Color color) {
     fontWeight: FontWeight.bold
   );
 }
+
+TextStyle normalTextStyle (BuildContext context, Color color) {
+  return TextStyle(
+    color: color,
+    fontSize: 16*get_scale_factor(context),
+    // fontWeight: FontWeight.bold
+  );
+}

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:monthy_tracker/Widgets/action_button.dart';
 import 'package:monthy_tracker/Widgets/ancor_text.dart';
+import 'package:monthy_tracker/Widgets/appbar.dart';
 import 'package:monthy_tracker/Widgets/page_title_bar.dart';
 import 'package:monthy_tracker/Widgets/input_text_widget.dart';
 
@@ -25,11 +26,12 @@ class _AddNewTuitionPageState extends State<AddNewTuitionPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: appBar(context),
         body: Container(
           color: Colors.white,
           alignment: Alignment.centerRight,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               PageTitleBar(context, color1, "Add New Tuition"),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:monthy_tracker/Styles.dart';
 import 'package:monthy_tracker/Widgets/action_button.dart';
+import 'package:monthy_tracker/Widgets/appbar.dart';
 import 'package:monthy_tracker/Widgets/dropdown.dart';
 import 'package:monthy_tracker/Widgets/page_title_bar.dart';
 
@@ -29,6 +30,7 @@ class _RemoveTuitionPageState extends State<RemoveTuitionPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: appBar(context),
         body: Container(
           color: Colors.white,
           alignment: Alignment.centerRight,
