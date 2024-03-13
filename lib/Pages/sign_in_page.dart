@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:monthy_tracker/Pages/forget_password_page.dart';
 import 'package:monthy_tracker/Pages/home_page.dart';
 import 'package:monthy_tracker/Pages/sign_up_page.dart';
 import 'package:monthy_tracker/Widgets/action_button.dart';
@@ -31,6 +32,12 @@ class _SignInPageState extends State<SignInPage> {
 
   }
 
+  void go_to_forget_pass_page(){
+    print("Sign up page triggered");
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>ForgetPasswordPage()));
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -50,6 +57,7 @@ class _SignInPageState extends State<SignInPage> {
               InputTextWidget(context, Colors.white, Colors.black, "Password", "Enter password", pass, true),
               ActionButton(context, color3, "Sign In", do_sign_in),
               AncorText(context,Colors.transparent,color1,"Don't have an account? Sign up", go_to_signup_page),
+              AncorText(context,Colors.transparent,color1,"Forget Password? Click to recovery", go_to_forget_pass_page),
             ],
           ),
         ),
